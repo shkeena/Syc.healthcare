@@ -76,8 +76,7 @@
       z-index: 10;
     }
     
-    /* 2. HEADER - Tambahkan/Update bagian ini */
-    .header-title {
+  .header-title {
       font-weight: 600;
       padding: 4px 12px;
       border-radius: 12px;
@@ -85,24 +84,11 @@
       align-items: center;
       gap: 6px;
       border: 1px solid rgba(6, 78, 59, 0.2);
-      /* Menambahkan shadow yang sama dengan system-status */
-      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05); 
-      background-color: white; /* Tambahkan background agar shadow terlihat jelas */
+      
+      /* Menggunakan filter drop-shadow agar shadow muncul meski background transparan */
+      filter: drop-shadow(0 2px 2px rgba(0, 0, 0, 0.1));
     }
 
-    .system-status {
-      font-size: 0.75rem;
-      font-weight: 600;
-      color: #064E3B;
-      padding: 4px 12px;
-      border-radius: 12px;
-      display: flex;
-      align-items: center;
-      gap: 6px;
-      border: 1px solid rgba(6, 78, 59, 0.2);
-      background-color: white; /* Konsistensi background */
-      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05); /* Shadow asli */
-    }
     
     .status-dot {
       width: 6px;
