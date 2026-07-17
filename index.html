@@ -51,20 +51,19 @@ html, body {
 
 /* 3. AREA IFRAME */
 .work-space {
-  flex: 1; /* Mengisi sisa ruang setelah header */
+  flex: 1; /* Ini mengambil semua ruang yang tersisa setelah header */
   width: 100%;
   position: relative;
   background-color: #F8F9FA;
-  overflow: hidden; /* Iframe menangani scroll-nya sendiri */
+  overflow: hidden; 
 }
 
 .work-space iframe {
-    width: 100vw; /* Lebar tepat selebar layar */
-    height: 100vh; /* Tinggi tepat setinggi layar */
-    border: none;
-    display: block;
-    overflow: hidden;
-  }
+  width: 100%;    /* Mengikuti lebar parent (work-space) */
+  height: 100%;   /* Mengikuti tinggi parent (work-space) */
+  border: none;
+  display: block;
+}
     /* 4. LOADING TRANSISI */
     .loading-screen {
       position: absolute;
