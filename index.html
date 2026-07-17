@@ -4,30 +4,49 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
   <title>SYNC.HEALTH CARE</title>
-  <style>
-    body, html {
-      margin: 0; padding: 0;
-      width: 100%; height: 100%;
-      overflow: hidden;
-      background-color: #F8F9FA;
+<style>
+  /* Menghilangkan margin bawaan */
+  body, html { margin: 0; padding: 0; width: 100%; height: 100%; overflow: hidden; }
+
+  /* Wrapper untuk mengontrol iframe */
+  .iframe-container {
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+  }
+
+  /* Pengaturan dasar iframe */
+  .iframe-container iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+  }
+
+  /* MEDIA QUERY UNTUK PORTRAIT (HP Tegak) */
+  @media screen and (orientation: portrait) {
+    .iframe-container iframe {
+      /* Pastikan iframe mengambil penuh ruang layar saat portrait */
+      width: 100vw;
+      height: 100vh;
     }
-    
-    /* iframe harus fixed agar tidak bisa 'diusir' oleh browser */
-    iframe {
-      position: fixed;
-      top: 0; left: 0;
-      width: 100%; height: 100%;
-      border: none;
-      /* Memaksa konten di dalam iframe mengikuti skala perangkat */
-      display: block;
+  }
+
+  /* MEDIA QUERY UNTUK LANDSCAPE (HP Miring) */
+  @media screen and (orientation: landscape) {
+    .iframe-container iframe {
+      /* Opsional: Sesuaikan jika ingin perilaku berbeda saat landscape */
+      width: 100vw;
+      height: 100vh;
     }
-  </style>
-</head>
-<body>
+  }
+</style>
+
+<div class="iframe-container">
   <iframe 
     src="https://script.google.com/macros/s/AKfycbyWgW4YficpmzXTj-gzv9iYREg2N3A8i-c_UQOls8yAAyZa2S3DaGJ3RoBvp2_N7LEk/exec"
     allow="geolocation; camera; microphone; fullscreen"
     sandbox="allow-forms allow-scripts allow-same-origin allow-popups">
   </iframe>
+</div>
 </body>
 </html>
