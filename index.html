@@ -2,13 +2,54 @@
 <html lang="id">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
   <title>SYNC.HEALTH CARE</title>
-  <script>
-    // Langsung mengalihkan ke aplikasi asli
-    window.location.replace("https://script.google.com/macros/s/AKfycbxzwAozy7iyCzi0OsvOG1EIBg0byMdGyfbwKhu6d7IE2_nZFCbukm3upv9Qfo29StY/exec");
-  </script>
+  <style>
+    body, html {
+      margin: 0; padding: 0;
+      width: 100%; height: 100%;
+      overflow: hidden;
+      background-color: #F8F9FA;
+    }
+
+    /* Mengatur iframe agar memenuhi layar */
+    #mainIframe {
+      width: 100vw;
+      height: 100vh;
+      border: none;
+      display: block;
+      /* Memastikan iframe tidak terpengaruh oleh padding */
+      position: absolute;
+      top: 0; left: 0;
+    }
+
+  </style>
 </head>
 <body>
-  <p>Sedang mengalihkan ke aplikasi...</p>
+
+  <iframe 
+    id="mainIframe"
+    src="https://script.google.com/macros/s/AKfycbxzwAozy7iyCzi0OsvOG1EIBg0byMdGyfbwKhu6d7IE2_nZFCbukm3upv9Qfo29StY/exec"
+    allow="geolocation; camera; microphone; fullscreen"
+    sandbox="allow-forms allow-scripts allow-same-origin allow-popups">
+  </iframe>
+
+  <script>
+    // FUNGSI PAKSA: Menyesuaikan skala iframe jika konten terlihat kecil
+    function forceMobileView() {
+      const iframe = document.getElementById('mainIframe');
+      const width = window.innerWidth;
+      
+      // Jika lebar layar kurang dari 600px (HP), kita paksa agar tidak berantakan
+      if (width < 600) {
+        iframe.style.width = '100vw';
+        iframe.style.height = '100vh';
+      }
+    }
+
+    window.addEventListener('resize', forceMobileView);
+    forceMobileView();
+  </script>
+
 </body>
 </html>
