@@ -2,76 +2,33 @@
 <html lang="id">
 <head>
   <meta charset="UTF-8">
-  <!-- Meta viewport standar -->
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>SYNC.HEALTH CARE</title>
- <style>
-  /* Mengatur agar halaman tidak bisa scroll dan pas di layar */
-  body, html {
-    margin: 0;
-    padding: 0;
-    width: 100%;
-    height: 100%;
-    overflow: hidden;
-  }
+  <style>
+    /* Mengatur body agar tidak ada batasan */
+    body, html {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      width: 100%;
+    }
 
-  /* Kontainer yang memaksa iframe agar selalu auto mengikuti ukuran layar */
-  .container {
-    width: 100vw;
-    height: 100vh;
-    display: block;
-  }
+    /* Iframe dibiarkan auto tanpa batasan paksaan */
+    iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+      display: block;
+    }
+  </style>
+</head>
+<body>
 
-  .container iframe {
-    width: 100%;  /* Mengikuti lebar container */
-    height: 100%; /* Mengikuti tinggi container */
-    border: none;
-    display: block;
-  }
-
-   /* Pastikan tag ini ada di dalam file CSS Apps Script Anda */
-@media screen and (max-width: 768px) {
-  body {
-    width: 100% !important;
-    overflow-x: hidden;
-  }
-}
-   
-</style>
-
-<div class="container">
   <iframe 
     src="https://script.google.com/macros/s/AKfycbyWgW4YficpmzXTj-gzv9iYREg2N3A8i-c_UQOls8yAAyZa2S3DaGJ3RoBvp2_N7LEk/exec"
     allow="geolocation; camera; microphone; fullscreen"
     sandbox="allow-forms allow-scripts allow-same-origin allow-popups">
   </iframe>
-</div>
 
-  <script>
-    function updateLayout() {
-      const iframe = document.getElementById('mainIframe');
-      
-      // Memaksa iframe menyesuaikan ukuran mengikuti orientasi
-      if (window.innerHeight > window.innerWidth) {
-        // Mode Portrait
-        iframe.style.width = '100vw';
-        iframe.style.height = '100vh';
-      } else {
-        // Mode Landscape
-        iframe.style.width = '100vw';
-        iframe.style.height = '100vh';
-      }
-    }
-
-    // Event listener untuk perubahan orientasi
-    window.addEventListener('orientationchange', () => {
-      setTimeout(updateLayout, 300); // Tunggu animasi rotasi selesai
-    });
-
-    window.addEventListener('resize', updateLayout);
-    
-    // Jalankan saat load pertama kali
-    updateLayout();
-  </script>
 </body>
 </html>
